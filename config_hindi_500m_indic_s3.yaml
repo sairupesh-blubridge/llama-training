@@ -1,9 +1,15 @@
 checkpoints:
-  checkpoint_interval: 5000
-  checkpoints_path: s3://vastshards/checkpoints_fineweb_2_hindi_500m_indic/
+  checkpoint_interval: 2500
+  checkpoints_path: /workspace/checkpoints_hindi_500m_indic
   checkpoints_path_is_shared_file_system: false
   resume_checkpoint_path: null
   save_initial_state: false
+s3_upload:
+  upload_s3_path: s3://vastshards/checkpoints_fineweb_2_hindi_500m_indic/
+  remove_after_upload: true
+  s5cmd_numworkers: 16
+  s5cmd_concurrency: 5
+  s5cmd_path: /usr/local/bin/s5cmd
 data_stages:
 - data:
     dataset: null 
@@ -53,7 +59,7 @@ optimizer:
   clip_grad: 1.0
   learning_rate_scheduler:
     learning_rate: 0.0003
-    lr_decay_steps: 19073
+    lr_decay_steps: 38146
     lr_decay_style: cosine
     lr_warmup_steps: 50
     lr_warmup_style: linear
@@ -74,7 +80,7 @@ tokenizer:
   tokenizer_name_or_path: ai4bharat/IndicBART
 tokens:
   batch_accumulation_per_replica: 1
-  micro_batch_size: 8
+  micro_batch_size: 16
   sequence_length: 2048
-  train_steps: 76293
+  train_steps: 38146
   val_check_interval: -1
