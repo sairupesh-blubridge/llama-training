@@ -1,0 +1,52 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+
+# Virtual environments
+nanotron_env/
+venv/
+env/
+ENV/
+
+# Nanotron repository (cloned during setup)
+nanotron/
+
+# Data and checkpoints
+*_shards/
+checkpoints_*/
+*.npy
+*.safetensors
+
+# Logs
+logs/
+*.log
+benchmark_*.csv
+
+# Hugging Face cache
+.hf_home/
+.cache/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+/tmp/
+
+# Backups
+.venv-backups/
+*.bak
